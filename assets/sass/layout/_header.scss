@@ -1,0 +1,27 @@
+header
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top:20px;
+
+    nav{
+        width:50%;
+        min-width:650px;
+        @include flex-row-spacebetween;
+        
+        a{
+            text-decoration: none;
+            color:$principal-color;
+            font-weight: bold;
+            font-family: $second-font;
+            font-size: $nav-font-size;
+            &:hover{
+                color:$second-color;
+                text-decoration: underline;
+            }
+        }
+    
+    }
+}
+

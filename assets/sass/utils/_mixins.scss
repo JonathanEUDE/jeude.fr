@@ -1,0 +1,59 @@
+@mixin important-word {
+    font-family: $second-font;
+    color:$second-color;
+}
+
+@mixin flex-column-flexstart{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@mixin flex-column-flexend{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+@mixin flex-column-center-center {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-spacearound {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@mixin flex-row-spacebetween {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin flex-row-spacebetween-center {
+    @include flex-row-spacebetween;
+    align-items: center;
+}
+
+@mixin flex-row-spacearound-center {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin flex-row-flexend{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@mixin projet-bouton-colors {
+    color:$fourth-color;
+    background-color: $third-color;
+}

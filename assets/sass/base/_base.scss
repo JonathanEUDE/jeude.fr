@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Light", sans-serif;
+  font-size: $principal-font-size;
+}
+
+html {
+  font-size: 62.5%;
+  color: $principal-color;
+  background-color: $principal-background-color;
+
+  scroll-behavior:smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin:0 auto 0 auto;
+}

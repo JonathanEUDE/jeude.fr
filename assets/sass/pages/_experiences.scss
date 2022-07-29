@@ -1,0 +1,49 @@
+#experiences ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 32rem;
+
+    margin-top:3rem;
+
+
+    li{
+        list-style: none;
+        position:relative;
+        &:after
+        {
+            display:block;
+            content:'';
+            position:absolute;
+            height:3rem;
+            width:3rem;
+            top:-0.3rem;
+            left:-1rem;
+            border-radius: 50%;
+            background-color: $second-color;
+        }
+        &:before
+        {
+            display:block;
+            content:'';
+            position:absolute;
+            height:6rem;
+            width:3px;
+            top:-6rem;
+            left:0.45rem;
+            background-color:$second-color;
+            opacity: 0.2;
+            
+        }
+        span{
+            position:absolute;
+            left:3rem;
+        }
+
+        &:first-child{
+            &:before{
+                display:none;
+            }
+        }
+    }
+}

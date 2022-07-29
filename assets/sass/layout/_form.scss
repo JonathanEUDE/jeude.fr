@@ -1,0 +1,19 @@
+h1{
+    font-size:$second-font-size;
+}
+
+h2{
+    font-size:$third-font-size;
+    @include important-word;
+    opacity: 0.2;
+    text-transform: uppercase;
+}
+
+strong{
+    font-size:$second-font-size;
+    @include important-word;
+}
+
+em{
+    @include important-word;
+}

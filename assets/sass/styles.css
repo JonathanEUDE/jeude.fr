@@ -1,0 +1,389 @@
+@charset "UTF-8";
+/*
+    - base/ contient les fichiers qui définissent les fondations de votre site, par exemple la police de caractères 
+            et les normes que vous voulez appliquer sur tout votre site, telles que le box-sizing ;
+    - utils/, vous rangez vos variables, fonctions, mixins et les  %placeholders pour les extensions (si vous en utilisez) ;
+    - layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable, 
+            par exemple un header pour les mises en page de grande taille ou un footer ;
+    - components/ est utilisé pour ranger les blocs BEM qui sont plus indépendants, comme les boutons.
+
+Alors que les layouts peuvent utiliser d’autres composants pour générer leurs contenus, les composants, eux, sont plus élémentaires. 
+Par exemple, un formulaire doit être considéré comme un layout : la mise en page est une fonction vitale du bloc 
+et il utilise d’autres blocs pour fonctionner,  comme des boutons. En revanche, le bouton lui-même est un composant car il n’a besoin 
+d’aucun autre composant pour remplir sa fonction ;
+
+    pages/ contient les blocs de code qui ne s’appliquent qu’à une seule page. 
+            Vous utilisez des boutons dans tout votre site, en revanche votre page d’accueil comporte une section Citation 
+            et une grille de projets qui ne sont employés nulle part ailleurs. En d’autres termes, pages/ contient des règles spécifiques 
+            à une seule page qui ne seront pas réutilisées ailleurs ;
+    themes/, c’est ici que vous stockez le code thématique, par exemple un style customisé pour Noël ou pour l’été. 
+    vendors/ est un directory pour des feuilles de style externes comme Bootstrap ou jQuery UI. En gros, il s’utilise pour tout CSS venant de l’extérieur. 
+
+D’une manière générale, pour éviter les erreurs, faites en sorte d’importer vos fichiers dans l’ordre suivant :
+    Utils :
+        Variables.
+        Fonctions.
+        Mixins.
+        Placeholders.
+    Feuilles de style de tiers (vendors) (si vous en avez).
+    Base.
+    Composants.
+    Layout.
+    Pages.
+    Thèmes.
+
+Exemple : 
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 2.4rem;
+}
+
+html {
+  font-size: 62.5%;
+  color: #000000;
+  background-color: #E5E5E5;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto 0 auto;
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Roboto Light";
+  src: url("./base/fonts//Roboto-Thin.ttf");
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("./base/fonts//Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("./base/fonts//PermanentMarker.ttf");
+}
+.go-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #006D77;
+  -webkit-animation: go-down-effect 2s ease 2s infinite;
+          animation: go-down-effect 2s ease 2s infinite;
+  margin-top: 50px;
+}
+
+@-webkit-keyframes go-down-effect {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30);
+  }
+  90% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes go-down-effect {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30);
+  }
+  90% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#go-up {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  text-decoration: none;
+  color: #006D77;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+header nav {
+  width: 50%;
+  min-width: 650px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-family: "Roboto Regular";
+  font-size: 1.8rem;
+}
+header nav a:hover {
+  color: #006D77;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 5rem;
+  font-family: "Roboto Regular";
+  color: #006D77;
+  opacity: 0.2;
+  text-transform: uppercase;
+}
+
+strong {
+  font-size: 7rem;
+  font-family: "Roboto Regular";
+  color: #006D77;
+}
+
+em {
+  font-family: "Roboto Regular";
+  color: #006D77;
+}
+
+footer {
+  margin: 50px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+}
+footer #footer-contenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+footer #footer-contenu #email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer #footer-contenu #email i {
+  margin-right: 1rem;
+  color: #006D77;
+}
+footer #footer-contenu #email a {
+  text-decoration: none;
+  color: #000000;
+}
+footer #footer-contenu #site-internet a {
+  text-decoration: none;
+  color: #006D77;
+}
+footer #footer-contenu #site-internet a:hover {
+  text-decoration: underline;
+}
+footer #footer-contenu #reseaux-footer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+#presentation-speech {
+  margin-top: 50px;
+}
+#presentation-speech p {
+  padding-left: 25rem;
+}
+
+#reseaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+#reseaux #reseaux-logos {
+  width: 50%;
+  border-top: 3px solid #006D77;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#reseaux #reseaux-logos a {
+  margin-top: 30px;
+}
+#reseaux #reseaux-logos a img {
+  width: 4rem;
+  height: 4rem;
+}
+#reseaux #reseaux-logos a:nth-child(-n+2) {
+  margin-right: 30px;
+}
+
+#projets {
+  height: 100rem;
+}
+
+#projets-liste {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#projets-liste a {
+  text-decoration: none;
+  margin: 50px;
+}
+#projets-liste a .projet-bouton {
+  color: #E5E5E5;
+  background-color: #83C5BE;
+  border-radius: 2rem;
+  font-weight: bold;
+  height: 9rem;
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#projet1:before {
+  content: "J'ai effectué l'intégration de cette page 'from scratch'. L'intérêt principal de ce projet était d'apprendre à gérer le HTML, le CSS, notamment la notion Flexbox.";
+  font-family: "Permanent Marker";
+  font-weight: normal;
+  color: #000000;
+  position: absolute;
+  top: -30rem;
+  left: 30rem;
+  width: 40rem;
+}
+#projet1:after {
+  content: url("/assets/images/arrow2.png");
+  position: absolute;
+  height: 2rem;
+  color: #000000;
+  top: -15rem;
+  left: 10rem;
+}
+
+#competences {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#competences #competences-listes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#competences #competences-listes .competence-liste {
+  width: 45%;
+}
+#competences #competences-listes .competence-liste .competence-titre {
+  color: #006D77;
+  padding: 20px;
+}
+#competences #competences-listes .competence-liste:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+#competences #competences-listes .competence-liste:nth-child(1) ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  list-style: none;
+}
+#competences #competences-listes .competence-liste:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#competences #competences-listes .competence-liste:nth-child(2) ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+#experiences ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 32rem;
+  margin-top: 3rem;
+}
+#experiences ul li {
+  list-style: none;
+  position: relative;
+}
+#experiences ul li:after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  top: -0.3rem;
+  left: -1rem;
+  border-radius: 50%;
+  background-color: #006D77;
+}
+#experiences ul li:before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 6rem;
+  width: 3px;
+  top: -6rem;
+  left: 0.45rem;
+  background-color: #006D77;
+  opacity: 0.2;
+}
+#experiences ul li span {
+  position: absolute;
+  left: 3rem;
+}
+#experiences ul li:first-child:before {
+  display: none;
+}/*# sourceMappingURL=styles.css.map */

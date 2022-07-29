@@ -1,0 +1,48 @@
+#projets{
+    height: 100rem;
+}
+
+
+#projets-liste{
+    height:80%;
+    @include flex-row-spacearound-center;
+    a{
+        text-decoration: none;
+        margin:50px;
+        .projet-bouton{
+            @include projet-bouton-colors;
+            border-radius: 2rem;
+            font-weight: bold;
+            height: 9rem;
+            width: 24rem;
+            @include flex-column-center-center;
+
+            position:relative;
+        }
+    }
+}
+
+#projet1{
+    
+    &:before{
+    content:"J'ai effectué l'intégration de cette page 'from scratch'. L'intérêt principal de ce projet était d'apprendre à gérer le HTML, le CSS, notamment la notion Flexbox.";
+    font-family: $third-font;
+    font-weight: normal;
+    color:$principal-color;
+
+    position:absolute;
+    top:-30rem;
+    left:30rem;
+    width:40rem;
+    }
+    &:after{
+        content:url("#{$images-path}arrow2.png");
+        position:absolute;
+        height:2rem;
+        color:$principal-color;
+        top:-15rem;
+        left:10rem;
+
+    }
+}
+

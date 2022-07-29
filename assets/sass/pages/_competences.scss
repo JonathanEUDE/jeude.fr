@@ -1,0 +1,27 @@
+#competences{
+    @include flex-column-flexstart;
+    #competences-listes{
+        @include flex-row-spacearound;
+        .competence-liste{
+            width:45%;
+            .competence-titre{
+                color:$second-color;
+                padding:20px;
+            }
+        }
+        .competence-liste:nth-child(1){
+            @include flex-column-flexend;
+            ul{
+                @include flex-column-flexend;
+                list-style:none;
+            }
+        }
+        .competence-liste:nth-child(2){
+            @include flex-column-flexstart;
+            ul{
+                @include flex-column-flexstart;
+                list-style:none;
+            }
+        }
+    }
+}
