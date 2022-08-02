@@ -63,6 +63,11 @@ html {
   background-color: #E5E5E5;
   scroll-behavior: smooth;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   display: flex;
@@ -214,6 +219,16 @@ footer #footer-contenu #email a {
   text-decoration: none;
   color: #000000;
 }
+@media all and (max-width: 768px) {
+  footer #footer-contenu #email #footer-informations-textuelles em {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  footer #footer-contenu #site-internet {
+    display: none;
+  }
+}
 footer #footer-contenu #site-internet a {
   text-decoration: none;
   color: #006D77;
@@ -231,6 +246,11 @@ footer #footer-contenu #reseaux-footer a {
 }
 #presentation-speech p {
   padding-left: 25rem;
+}
+@media (max-width: 768px) {
+  #presentation-speech p {
+    padding-left: 0;
+  }
 }
 
 #reseaux {
@@ -250,8 +270,8 @@ footer #footer-contenu #reseaux-footer a {
   margin-top: 30px;
 }
 #reseaux #reseaux-logos a img {
-  width: 4rem;
-  height: 4rem;
+  width: 8rem;
+  height: 8rem;
 }
 #reseaux #reseaux-logos a:nth-child(-n+2) {
   margin-right: 30px;
@@ -261,16 +281,35 @@ footer #footer-contenu #reseaux-footer a {
   height: 100rem;
 }
 
-#projets-liste {
-  height: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+@media all and (min-width: 778px) {
+  #projets-liste {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+  }
+}
+@media all and (max-width: 778px) {
+  #projets-liste {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 #projets-liste a {
   text-decoration: none;
-  margin: 50px;
+}
+@media all and (min-width: 778px) {
+  #projets-liste a {
+    margin: 50px;
+  }
+}
+@media all and (max-width: 778px) {
+  #projets-liste a {
+    margin-top: 50px;
+  }
 }
 #projets-liste a .projet-bouton {
   color: #E5E5E5;
@@ -286,6 +325,15 @@ footer #footer-contenu #reseaux-footer a {
   position: relative;
 }
 
+@media all and (max-width: 778px) {
+  #projet1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+  }
+}
 #projet1:before {
   content: "J'ai effectué l'intégration de cette page 'from scratch'. L'intérêt principal de ce projet était d'apprendre à gérer le HTML, le CSS, notamment la notion Flexbox.";
   font-family: "Permanent Marker";
@@ -296,6 +344,12 @@ footer #footer-contenu #reseaux-footer a {
   left: 30rem;
   width: 40rem;
 }
+@media all and (max-width: 778px) {
+  #projet1:before {
+    top: -50%;
+    width: 90%;
+  }
+}
 #projet1:after {
   content: url("/assets/images/arrow2.png");
   position: absolute;
@@ -303,6 +357,11 @@ footer #footer-contenu #reseaux-footer a {
   color: #000000;
   top: -15rem;
   left: 10rem;
+}
+@media all and (max-width: 778px) {
+  #projet1:after {
+    display: none;
+  }
 }
 
 #competences {
@@ -319,25 +378,33 @@ footer #footer-contenu #reseaux-footer a {
   width: 45%;
 }
 #competences #competences-listes .competence-liste .competence-titre {
+  height: 100%;
   color: #006D77;
   padding: 20px;
 }
+#competences #competences-listes .competence-liste .competence-titre i {
+  transform: scale(1);
+  transition: transform 1s ease-in-out;
+}
+#competences #competences-listes .competence-liste ul:hover + .competence-titre i {
+  transform: scale(1.5);
+}
 #competences #competences-listes .competence-liste:nth-child(1) {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 #competences #competences-listes .competence-liste:nth-child(1) ul {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-end;
   list-style: none;
 }
 #competences #competences-listes .competence-liste:nth-child(2) {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: flex-start;
 }
 #competences #competences-listes .competence-liste:nth-child(2) ul {

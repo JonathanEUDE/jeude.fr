@@ -1,26 +1,45 @@
-#competences{
+#competences {
     @include flex-column-flexstart;
-    #competences-listes{
+
+    #competences-listes {
         @include flex-row-spacearound;
-        .competence-liste{
-            width:45%;
-            .competence-titre{
-                color:$second-color;
-                padding:20px;
+
+        .competence-liste {
+            width: 45%;
+
+            .competence-titre {
+                height: 100%;
+                color: $second-color;
+                padding: 20px;
+
+                i {
+                    transform: scale(1);
+                    transition: transform 1s ease-in-out;
+                }
+            }
+
+            ul {
+                &:hover+.competence-titre i {
+                    transform: scale(1.5);
+                }
             }
         }
-        .competence-liste:nth-child(1){
-            @include flex-column-flexend;
-            ul{
-                @include flex-column-flexend;
-                list-style:none;
+
+        .competence-liste:nth-child(1) {
+            @include flex-columnreverse-flexend-flexend;
+
+            ul {
+                @include flex-column-flexend-flexend;
+                list-style: none;
             }
         }
-        .competence-liste:nth-child(2){
-            @include flex-column-flexstart;
-            ul{
+
+        .competence-liste:nth-child(2) {
+            @include flex-columnreverse-flexstart;
+
+            ul {
                 @include flex-column-flexstart;
-                list-style:none;
+                list-style: none;
             }
         }
     }

@@ -3,7 +3,7 @@
     text-decoration: none;
     color: $second-color;
     animation: go-down-effect 2s ease 2s infinite;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 @keyframes go-down-effect {
@@ -29,9 +29,9 @@
 }
 
 #go-up {
-    position:fixed;
-    bottom:30px;
-    right:30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     text-decoration: none;
     color: $second-color;
 }

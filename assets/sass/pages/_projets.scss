@@ -1,48 +1,73 @@
-#projets{
+#projets {
     height: 100rem;
 }
 
 
-#projets-liste{
-    height:80%;
-    @include flex-row-spacearound-center;
-    a{
+#projets-liste {
+    @media all and (min-width: 778px) {
+        @include flex-row-spacearound-center;
+        height: 80%;
+    }
+
+    @media all and (max-width:778px) {
+        @include flex-column-flexstart-flexstart;
+    }
+
+    a {
         text-decoration: none;
-        margin:50px;
-        .projet-bouton{
+        @media all and (min-width:778px){
+            margin: 50px;
+        }
+        @media all and (max-width:778px) {
+            margin-top:50px;
+        }
+
+        .projet-bouton {
             @include projet-bouton-colors;
             border-radius: 2rem;
             font-weight: bold;
             height: 9rem;
             width: 24rem;
             @include flex-column-center-center;
-
-            position:relative;
+            
+            position: relative;
         }
     }
 }
 
-#projet1{
-    
-    &:before{
-    content:"J'ai effectué l'intégration de cette page 'from scratch'. L'intérêt principal de ce projet était d'apprendre à gérer le HTML, le CSS, notamment la notion Flexbox.";
-    font-family: $third-font;
-    font-weight: normal;
-    color:$principal-color;
-
-    position:absolute;
-    top:-30rem;
-    left:30rem;
-    width:40rem;
+#projet1 {
+    @media all and (max-width:778px) {
+        @include flex-row-spacearound-center;
+        width: 50%;
     }
-    &:after{
-        content:url("#{$images-path}arrow2.png");
-        position:absolute;
-        height:2rem;
-        color:$principal-color;
-        top:-15rem;
-        left:10rem;
 
+    &:before {
+        content: "J'ai effectué l'intégration de cette page 'from scratch'. L'intérêt principal de ce projet était d'apprendre à gérer le HTML, le CSS, notamment la notion Flexbox.";
+        font-family: $third-font;
+        font-weight: normal;
+        color: $principal-color;
+
+        position: absolute;
+        top: -30rem;
+        left: 30rem;
+        width: 40rem;
+
+        @media all and (max-width:778px) {
+            top:-50%;
+            width:90%;
+        }
+    }
+
+    &:after {
+        content:url("#{$images-path}arrow2.png");
+        position: absolute;
+        height: 2rem;
+        color: $principal-color;
+        top: -15rem;
+        left: 10rem;
+
+        @media all and (max-width:778px) {
+            display: none;
+        }
     }
 }
-
